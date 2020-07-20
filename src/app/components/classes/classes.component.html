@@ -2,6 +2,8 @@
     A simple primary alert—check it out!
 </div>
 
+<br>
+
 <!-- Cambia la clase de la alerta dependiendo de a cuál botón le demos clic  -->
 <button type="button" class="btn btn-info" (click)=" alert = 'alert-info' "> Info </button>
 
@@ -14,5 +16,18 @@
     Hola Mundo
 </h3>
 
+<br>
+
 <!-- Cambia el color del botón y del "Hola Mundo" cuando damos clic a este mismo botón  -->
 <button type="button" name="button" (click)="propiedades.danger = !propiedades.danger" class="btn" [ngClass]=" { 'btn-danger': propiedades.danger, 'btn-info': !propiedades.danger } ">Cambiar</button>
+
+<br>
+
+<!-- Usando procesos asíncronos -->
+<button  class="btn btn-primary" type="button" name="button" (click)="executeLoading()" [disabled]="loading">
+
+    <i [ngClass]="{ 'fa-save': !loading, 'fa-refresh fa-spin': loading }" class="fa"></i>
+    <span *ngIf="!loading">Guardar cambios</span>
+    <span *ngIf="loading">Espere por favor</span>
+       
+</button>
