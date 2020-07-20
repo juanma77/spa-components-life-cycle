@@ -1,0 +1,18 @@
+<div [ngClass]="alert" class="alert" role="alert">
+    A simple primary alert—check it out!
+</div>
+
+<!-- Cambia la clase de la alerta dependiendo de a cuál botón le demos clic  -->
+<button type="button" class="btn btn-info" (click)=" alert = 'alert-info' "> Info </button>
+
+<button type="button" class="btn btn-info" (click)=" alert = 'alert-success' "> Success </button>
+
+<br><br>
+
+<!-- Utilizando un objeto para cambiar la clase del elemento -->
+<h3 [ngClass]=" { ' text-danger ': propiedades.danger, 'text-info': !propiedades.danger } ">
+    Hola Mundo
+</h3>
+
+<!-- Cambia el color del botón y del "Hola Mundo" cuando damos clic a este mismo botón  -->
+<button type="button" name="button" (click)="propiedades.danger = !propiedades.danger" class="btn" [ngClass]=" { 'btn-danger': propiedades.danger, 'btn-info': !propiedades.danger } ">Cambiar</button>
